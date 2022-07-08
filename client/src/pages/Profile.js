@@ -1,10 +1,11 @@
 import React from "react";
 import { Navigate, useParams } from "react-router-dom";
 import ThoughtList from "../components/ThoughtList";
+import ThoughtForm from "../components/ThoughtForm";
+import FriendList from "../components/FriendList";
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_USER, QUERY_ME } from "../utils/queries";
 import { ADD_FRIEND } from "../utils/mutations";
-import FriendList from "../components/FriendList";
 import Auth from "../utils/auth";
 
 const Profile = () => {
@@ -75,6 +76,7 @@ const Profile = () => {
           ></FriendList>
         </div>
       </div>
+      <div className="mb-3">{!userParam && <ThoughtForm />}</div>
     </div>
   );
 };
